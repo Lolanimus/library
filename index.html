@@ -5,9 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Have read?</th>
+                <th>Change read status</th>
+                <th>Remove book</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="newBookDialogDiv">    
+        <button id="newBookDialog">NEW BOOK</button>
+    </div>
+    <dialog id="myDialog">
+        <legend>New Book</legend>
+        <form method="dialog" >
+            <p>
+                <label for="title">What is the title of the book?</label>
+                <input type="text" id="title" minlength="2" maxlength="10" required>
+            </p>
+            <p>
+                <label for="author">What is the author of the book?</label>
+                <input type="text" id="author" minlength="2" required>
+            </p>
+            <p>
+                <label for="pages">How many pages are there in the book?</label>
+                <input type="number" id="pages" min="20" max="1000" required>
+            </p>
+            <p>
+                <label for="read">Have you read the book?</label>
+                <select name="read" id="read" required>
+                    <option value="Have read">Have read</option>
+                    <option value="Have not read">Have not read</option>
+                </select>
+            </p>
+            <button id="confirmButton">Confirm</button>
+            <button id="cancelButton">Cancel</button>
+        </form>
+    </dialog>
 </body>
 </html>
